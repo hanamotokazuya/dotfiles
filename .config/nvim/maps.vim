@@ -44,7 +44,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 " Implementation
 nmap <silent> gi <Plug>(coc-Implementation)
 " References
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr :<C-u>CocCommand fzf-preview.CocReferences<cr>
 " スペースrnでRename
 nmap <silent> <space>rn <Plug>(coc-rename)
 " Diagnostic
@@ -65,14 +66,21 @@ xmap <leader>f  <Plug>(coc-format)
 nmap <leader>f  <Plug>(coc-format)
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <space>a  :<C-u>CocCommand fzf-preview.CocDiagnostics<cr>
 " Manage extensions.
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> <space>o  :<C-u>CocCommand fzf-preview.CocOutline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>g  :<C-u>CocList grep<cr>
-nnoremap <silent><nowait> <space>f  :<C-u>CocList files<cr>
+" nnoremap <silent><nowait> <space>g  :<C-u>CocList grep<cr>
+nnoremap <silent><nowait> <space>g  :<C-u>CocCommand fzf-preview.ProjectGrep<space>
+" nnoremap <silent><nowait> <space>f  :<C-u>CocList files<cr>
+nnoremap <silent><nowait> <space>f  :<C-u>CocCommand fzf-preview.ProjectFiles<cr>
+
+" coc-fzf-preview SETTINGS "
+" ------------------------------------------------------------------
 
 " vim-quichl KEYMAPPINGS "
 " ------------------------------------------------------------------

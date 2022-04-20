@@ -15,5 +15,7 @@ Plug 'xuyuanp/nerdtree-git-plugin'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
 Plug 't9md/vim-quickhl'
 Plug 'ulwlu/elly.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'sharkdp/bat'
 
 call plug#end()

@@ -90,7 +90,22 @@ augroup mygroup
   autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
+" fzf-preview SETTINGS "
+" ------------------------------------------------------------------
+" floating window size ratio
+let g:fzf_preview_floating_window_rate = 0.9
 
+" Commands used for fzf preview.
+let g:fzf_preview_command = 'bat --color=always --style=header,grid --line-range :100 {}' " Installed bat
+
+" Commands used for current file lines
+let g:fzf_preview_lines_command = 'bat --color=always --plain --number' " Installed bat
+
+" Use vim-devicons
+let g:fzf_preview_use_dev_icons = 0
+
+" devicons character width
+let g:fzf_preview_dev_icon_prefix_string_length = 3
 
 " treesitter -----------------------------------------------------
 lua <<EOF
