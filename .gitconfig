@@ -1,0 +1,13 @@
+[user]
+	name = hanamotokazuya
+	email = hanamoto.kazuya@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	ch = checkout
+	br = branch
+	co = commit
+	st = status
+	me = merge
