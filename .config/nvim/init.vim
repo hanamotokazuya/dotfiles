@@ -96,7 +96,7 @@ augroup end
 let g:fzf_preview_floating_window_rate = 0.9
 
 " Commands used for fzf preview.
-let g:fzf_preview_command = 'bat --color=always --style=header,grid --line-range :100 {}' " Installed bat
+let g:fzf_preview_command = 'bat --color=always --plain {-1}' " Installed bat
 
 " Commands used for current file lines
 let g:fzf_preview_lines_command = 'bat --color=always --plain --number' " Installed bat
@@ -107,6 +107,9 @@ let g:fzf_preview_use_dev_icons = 0
 " devicons character width
 let g:fzf_preview_dev_icon_prefix_string_length = 3
 
+" Devicons can make fzf-preview slow when the number of results is high
+" By default icons are disable when number of results is higher that 5000
+let g:fzf_preview_dev_icons_limit = 5000
 " treesitter -----------------------------------------------------
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
