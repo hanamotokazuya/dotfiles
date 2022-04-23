@@ -11,28 +11,28 @@ let g:python3_host_prog = $PYENV_ROOT.'/versions/py3/bin/python'
 set encoding=utf-8
 scriptencoding utf-8
 " help日本語化
-set helplang=ja
-set nobackup
-set nowritebackup
-set noswapfile
-set number
-set cmdheight=2
-set list
-set ruler
-set wildmenu
-set laststatus=2
 set autoindent
-set smartindent
+set background=dark
+set cmdheight=2
+set cursorline
 set expandtab
-set tabstop=2
-set shiftwidth=2
+set helplang=ja
 set hlsearch
 set ignorecase
+set laststatus=2
+set list
+set nobackup
+set noswapfile
+set nowritebackup
+set number
+set ruler
+set shiftwidth=2
+set smartindent
 set smartcase
-set background=dark
-syntax enable
-set cursorline
+set tabstop=2
 set updatetime=300
+set wildmenu
+syntax enable
 
 " 棒状カーソル
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -53,15 +53,30 @@ runtime ./maps.vim
 
 " colorscheme "
 " ------------------------------------------------------------------
-let g:elly_termmode="cterm"
-colorscheme elly
-let g:lightline = { 'colorscheme': 'elly', }
-highlight Normal ctermbg=none
-highlight NonText ctermbg=none
-highlight LineNr ctermbg=none
-highlight Folded ctermbg=none
-highlight EndOfBuffer ctermbg=none
-highlight LineNr ctermfg=240
+" Set cursor line color on visual mode
+highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
+
+highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
+
+augroup BgHighlight
+  autocmd!
+  autocmd WinEnter * set cul
+  autocmd WinLeave * set nocul
+augroup END
+
+if &term =~ "screen"
+  autocmd BufEnter * if bufname("") !~ "^?[A-Za-z0-9?]*://" | silent! exe '!echo -n "\ek[`hostname`:`basename $PWD`/`basename %`]\e\\"' | endif
+  autocmd VimLeave * silent!  exe '!echo -n "\ek[`hostname`:`basename $PWD`]\e\\"'
+endif
+
+" true color
+set termguicolors
+set winblend=0
+set wildoptions=pum
+set pumblend=5
+let g:neosolarized_termtrans=1
+runtime ./colors/NeoSolarized.vim
+colorscheme NeoSolarized
 
 
 " Airline SETTINGS ------------------------------------------
@@ -120,3 +135,9 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+
+" Preview-Markdown SETTINGS "
+" ------------------------------------------------------------------
+" skanehira/preview-markdown.vim用の設定値
+let g:preview_markdown_vertical = 1
+let g:preview_markdown_auto_update = 1

@@ -129,3 +129,7 @@ PROMPTCOMMAND=${PROMPT_COMMAND:+"$PROMPT_COMMAND; "}'printf "\e]9;9;%s\e\\" "$(w
 
 export DENO_INSTALL="/home/kah/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+chrome() {
+  /mnt/c/Program\ Files/Google/Chrome/Application/chrome.exe "$(wslpath -w $(realpath $1))"
+}

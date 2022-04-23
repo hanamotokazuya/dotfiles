@@ -17,3 +17,5 @@
 /.config/coc
 /.config/wslu
 /.config/nvim/plugged
+/.config/nextjs-nodejs
+/.config/yarn

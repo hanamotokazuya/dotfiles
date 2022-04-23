@@ -17,5 +17,7 @@ Plug 't9md/vim-quickhl'
 Plug 'ulwlu/elly.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'sharkdp/bat'
+Plug 'tpope/vim-rails'
+Plug 'skanehira/preview-markdown.vim'
 
 call plug#end()

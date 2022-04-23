@@ -1,4 +1,5 @@
 
+noremap <C-a> ggVG
 noremap j gj
 noremap k gk
 inoremap <Esc> <Esc>lh
@@ -89,3 +90,7 @@ xmap <space>m <plug>(quickhl-manual-this)
 nmap <space>M <plug>(quickhl-manual-reset)
 xmap <space>M <plug>(quickhl-manual-reset)
 
+
+" vim-quichl KEYMAPPINGS "
+" ------------------------------------------------------------------
+nmap mdr :<C-u>PreviewMarkdown right<cr>
